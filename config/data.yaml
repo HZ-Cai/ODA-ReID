@@ -1,0 +1,25 @@
+distributed: False
+
+data:
+    type: data.fashion_data::Dataset   
+    preprocess_mode: resize_and_crop    
+    num_workers: 8  # 8
+    sub_path: 256-256
+    load_size: [128, 64]  
+    scale_param: 0.05  
+    train_pairs: train_pairs.txt
+    test_pairs: test_pairs.txt
+    
+    occ_object_path: occ_object
+    occ_mask_path: occ_mask
+    if_concat_mask: True 
+    occ_mode: modeB  # modeX 1:0:0:0   modeA 1:0:1:0   modeB 1:0:1:1   modeC 1:1:1:0   modeD 1:1:1:1
+
+    train:
+      batch_size: 8 
+      distributed: False
+    val:
+      batch_size: 8
+      distributed: False
+
+
